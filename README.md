@@ -20,4 +20,4 @@ I have created several simple animations as a demo. The animation is able to cre
 ## 5. Licence:
 [MIT](https://choosealicense.com/licenses/mit/)
 ## 6. Author:
-[T. Fujita](https://github.com/T-Fujita)
+[T. Fujita](https://github.com/To-Fujita)
