@@ -7,9 +7,9 @@ It is easy to change their textures and to add some new animations.
 ## 3. Usage:
 
 ## 4. Reference:
-[Godot Engine](https://godotengine.org/)  
-[Godot-Virtual-Joystick](https://github.com/rodrigofbm/Godot-Virtual-Joystick)  
-[CUBEECRAFT](http://www.cubeecraft.com/)  
+[Godot Engine](https://godotengine.org/): Free and open source 2D and 3D game engine  
+[Godot-Virtual-Joystick](https://github.com/rodrigofbm/Godot-Virtual-Joystick): Virtual Joystick with Godot Engine 3.x  
+[CUBEECRAFT](http://www.cubeecraft.com/): 3D paper craft toys  
 ## 5. Licence:
 [MIT](https://github.com/tcrksm/tool/blob/master/LICENCE)
 ## 6. Author:
