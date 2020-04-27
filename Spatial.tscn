@@ -1,0 +1,228 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://images/ABC.png" type="Texture" id=1]
+[ext_resource path="res://Spatial.gd" type="Script" id=2]
+[ext_resource path="res://Animations/Walk.tres" type="Animation" id=3]
+[ext_resource path="res://Animations/Stop.tres" type="Animation" id=4]
+[ext_resource path="res://Animations/Walk_1.tres" type="Animation" id=5]
+[ext_resource path="res://images/grass.jpg" type="Texture" id=16]
+[ext_resource path="res://JoyStick.gd" type="Script" id=17]
+[ext_resource path="res://images/orange_ball_01.png" type="Texture" id=18]
+[ext_resource path="res://images/big_circle_N.png" type="Texture" id=19]
+[ext_resource path="res://KinematicBody_003.tscn" type="PackedScene" id=24]
+[ext_resource path="res://KinematicBody_002.tscn" type="PackedScene" id=25]
+[ext_resource path="res://KinematicBody_001.tscn" type="PackedScene" id=26]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 1.5, 2, 1.5 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+size = Vector3( 2, 1.5, 2 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=6]
+material = SubResource( 5 )
+size = Vector3( 0.5, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=8]
+material = SubResource( 7 )
+size = Vector3( 0.5, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=10]
+material = SubResource( 9 )
+size = Vector3( 0.5, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=12]
+material = SubResource( 11 )
+size = Vector3( 0.5, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=14]
+material = SubResource( 13 )
+size = Vector3( 0.75, 1, 0.75 )
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=16]
+material = SubResource( 15 )
+size = Vector3( 0.75, 1, 0.75 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=18]
+material = SubResource( 17 )
+size = Vector3( 0.75, 1, 0.75 )
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=20]
+material = SubResource( 19 )
+size = Vector3( 0.75, 1, 0.75 )
+
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 1, 2.5, 1 )
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_texture = ExtResource( 16 )
+uv1_scale = Vector3( 100, 100, 0 )
+
+[sub_resource type="PlaneMesh" id=23]
+material = SubResource( 22 )
+size = Vector2( 100, 100 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+shadow_enabled = true
+
+[node name="Spatial_Ginbal" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Spatial_Ginbal"]
+transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 3, 10 )
+
+[node name="KinematicBody_000" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5 )
+
+[node name="MeshInstance_Body" type="MeshInstance" parent="KinematicBody_000"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0236233, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance_Head" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance_Arm_L1" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 0.986431, -0.164175, 0, 0.164175, 0.986431, 1, 0.1, -0.160638 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance_Arm_L2" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body/MeshInstance_Arm_L1"]
+transform = Transform( 1, 0, 0, 0, 0.906075, 0.423118, 0, -0.423118, 0.906075, 0, -0.930468, 0.139064 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance_Arm_R1" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 0.986431, 0.164175, 0, -0.164175, 0.986431, -1, 0.1, 0.160638 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="MeshInstance_Arm_R2" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body/MeshInstance_Arm_R1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 12 )
+material/0 = null
+
+[node name="MeshInstance_Leg_L1" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 0.986431, 0.164175, 0, -0.164175, 0.986431, 0.4, -1.5, 0.160638 )
+mesh = SubResource( 14 )
+material/0 = null
+
+[node name="MeshInstance_Leg_L2" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body/MeshInstance_Leg_L1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="MeshInstance_Leg_R1" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 0.986431, -0.164175, 0, 0.164175, 0.986431, -0.4, -1.5, -0.160638 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="MeshInstance_Leg_R2" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body/MeshInstance_Leg_R1"]
+transform = Transform( 1, 0, 0, 0, 0.906074, -0.423117, 0, 0.423117, 0.906074, 0, -0.860936, -0.139064 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody_000"]
+anims/Stop = ExtResource( 4 )
+anims/Walk = ExtResource( 3 )
+anims/Walk_1 = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody_000"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
+shape = SubResource( 21 )
+
+[node name="Camera" type="Camera" parent="KinematicBody_000"]
+transform = Transform( 0.397612, -0.159332, 0.903614, 0, 0.984808, 0.173648, -0.917554, -0.0690446, 0.391572, 5, 0, 2 )
+visible = false
+
+[node name="Camera2" type="Camera" parent="KinematicBody_000"]
+transform = Transform( 0.397628, 0.15933, -0.903607, 0, 0.984808, 0.173648, 0.917547, -0.0690474, 0.391587, -5, 0, 2 )
+visible = false
+
+[node name="KinematicBody_003" parent="." instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 0 )
+
+[node name="KinematicBody_002" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 0 )
+
+[node name="KinematicBody_001" parent="." instance=ExtResource( 26 )]
+
+[node name="JoyStick" type="Node2D" parent="."]
+position = Vector2( 200, 460 )
+script = ExtResource( 17 )
+
+[node name="BigCircle" type="Sprite" parent="JoyStick"]
+texture = ExtResource( 19 )
+
+[node name="SmallCircle" type="Sprite" parent="JoyStick"]
+texture = ExtResource( 18 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 112.0
+margin_bottom = 203.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+ L: Look Around L
+ R: Look Around R
+ N: Nod
+ M: Shake Head
+ Q: Question L
+ A: Question R
+ S: Stop
+ W: Walk
+ E: Walk_1
+ T: Run
+  J:  Jump
+ F: Fall Down
+<- -> : Move
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeshInstance_Ground" type="MeshInstance" parent="."]
+mesh = SubResource( 23 )
+material/0 = null
+
+[editable path="KinematicBody_003"]
+
+[editable path="KinematicBody_002"]
+
+[editable path="KinematicBody_001"]

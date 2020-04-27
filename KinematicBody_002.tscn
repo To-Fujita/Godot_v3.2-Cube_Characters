@@ -1,0 +1,147 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://images/Cube_A_002/Arm_L_1.png" type="Texture" id=1]
+[ext_resource path="res://images/Cube_A_002/Arm_L_2.png" type="Texture" id=2]
+[ext_resource path="res://images/Cube_A_002/Head.png" type="Texture" id=3]
+[ext_resource path="res://images/Cube_A_002/Body.png" type="Texture" id=4]
+[ext_resource path="res://images/Cube_A_002/Leg_R_2.png" type="Texture" id=5]
+[ext_resource path="res://images/Cube_A_002/Arm_R_2.png" type="Texture" id=6]
+[ext_resource path="res://images/Cube_A_002/Arm_R_1.png" type="Texture" id=7]
+[ext_resource path="res://images/Cube_A_002/Leg_L_1.png" type="Texture" id=8]
+[ext_resource path="res://images/Cube_A_002/Leg_L_2.png" type="Texture" id=9]
+[ext_resource path="res://images/Cube_A_002/Leg_R_1.png" type="Texture" id=10]
+[ext_resource path="res://Animations/Walk.tres" type="Animation" id=11]
+[ext_resource path="res://Animations/Stop.tres" type="Animation" id=12]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 1.5, 2, 1.5 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+size = Vector3( 2, 1.5, 2 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=6]
+material = SubResource( 5 )
+size = Vector3( 0.5, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="CubeMesh" id=8]
+material = SubResource( 7 )
+size = Vector3( 0.5, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="CubeMesh" id=10]
+material = SubResource( 9 )
+size = Vector3( 0.5, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="CubeMesh" id=12]
+material = SubResource( 11 )
+size = Vector3( 0.5, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_texture = ExtResource( 8 )
+
+[sub_resource type="CubeMesh" id=14]
+material = SubResource( 13 )
+size = Vector3( 0.75, 1, 0.75 )
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_texture = ExtResource( 9 )
+
+[sub_resource type="CubeMesh" id=16]
+material = SubResource( 15 )
+size = Vector3( 0.75, 1, 0.75 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="CubeMesh" id=18]
+material = SubResource( 17 )
+size = Vector3( 0.75, 1, 0.75 )
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="CubeMesh" id=20]
+material = SubResource( 19 )
+size = Vector3( 0.75, 1, 0.75 )
+
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 1, 2.5, 1 )
+
+[node name="KinematicBody_002" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+
+[node name="MeshInstance_Body" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance_Head" type="MeshInstance" parent="MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance_Arm_L1" type="MeshInstance" parent="MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.1, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance_Arm_L2" type="MeshInstance" parent="MeshInstance_Body/MeshInstance_Arm_L1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance_Arm_R1" type="MeshInstance" parent="MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1, 0 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="MeshInstance_Arm_R2" type="MeshInstance" parent="MeshInstance_Body/MeshInstance_Arm_R1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 12 )
+material/0 = null
+
+[node name="MeshInstance_Leg_L1" type="MeshInstance" parent="MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -1.5, 0 )
+mesh = SubResource( 14 )
+material/0 = null
+
+[node name="MeshInstance_Leg_L2" type="MeshInstance" parent="MeshInstance_Body/MeshInstance_Leg_L1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="MeshInstance_Leg_R1" type="MeshInstance" parent="MeshInstance_Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -1.5, 0 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="MeshInstance_Leg_R2" type="MeshInstance" parent="MeshInstance_Body/MeshInstance_Leg_R1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Stop = ExtResource( 12 )
+anims/Walk = ExtResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
+shape = SubResource( 21 )
