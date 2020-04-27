@@ -7,9 +7,9 @@ It is easy to change their textures and to add some new animations.
 ## 3. Usage:
 
 ## 4. Reference:
-[Godot Engine](https://godotengine.org/)
-[Godot-Virtual-Joystick](https://github.com/rodrigofbm/Godot-Virtual-Joystick)
-[CUBEECRAFT](http://www.cubeecraft.com/)
+[Godot Engine](https://godotengine.org/)  
+[Godot-Virtual-Joystick](https://github.com/rodrigofbm/Godot-Virtual-Joystick)  
+[CUBEECRAFT](http://www.cubeecraft.com/)  
 ## 5. Licence:
 [MIT](https://github.com/tcrksm/tool/blob/master/LICENCE)
 ## 6. Author:
