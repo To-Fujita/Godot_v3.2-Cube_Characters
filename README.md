@@ -18,6 +18,6 @@ I have created several simple animations as a demo. The animation is able to cre
 [Godot-Virtual-Joystick](https://github.com/rodrigofbm/Godot-Virtual-Joystick): Virtual Joystick with Godot Engine 3.x  
 [CUBEECRAFT](http://www.cubeecraft.com/): 3D paper craft toys  
 ## 5. Licence:
-MIT
+[MIT](https://choosealicense.com/licenses/mit/)
 ## 6. Author:
 [T. Fujita](https://github.com/T-Fujita)
