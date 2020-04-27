@@ -5,6 +5,12 @@ It is easy to change their textures and to add some new animations.
 ## 2. Demo:
 [Cube Characters Animation Demo](https://to-fujita.github.io/Godot_v3.2-Cube_Characters/Cube_Characters_Demo.html)
 ## 3. Usage:
+<img src="attach:Cube_Characters_01.png" alt="attach:Cube_Character" title="attach:Cube_Character" width="700" height="400">
+### 3-1. Cubes
+
+### 3-2. Textures
+
+### 3-3. Animations
 
 ## 4. Reference:
 [Godot Engine](https://godotengine.org/): Free and open source 2D and 3D game engine  
