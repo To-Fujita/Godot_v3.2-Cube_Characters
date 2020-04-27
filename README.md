@@ -5,7 +5,7 @@ It is easy to change their textures and to add some new animations.
 ## 2. Demo:
 [Cube Characters Animation Demo](https://to-fujita.github.io/Godot_v3.2-Cube_Characters/Cube_Characters_Demo.html)
 ## 3. Usage:
-<img src="https://to-fujita.github.io/Images/Cube_Chracters_01.png" alt="Cube_Character" title="Cube_Character" width="700" height="400">
+<img src="https://to-fujita.github.io/Images/blob/master/Cube_Chracters_01.png" alt="Cube_Character" title="Cube_Character" width="700" height="400">
 ### 3-1. Cubes
 
 ### 3-2. Textures
