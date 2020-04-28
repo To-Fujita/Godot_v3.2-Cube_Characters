@@ -104,13 +104,12 @@ shadow_enabled = true
 [node name="Spatial_Ginbal" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="Spatial_Ginbal"]
-transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 3, 10 )
+transform = Transform( 1, 0, 0, 0, 0.992546, 0.121869, 0, -0.121869, 0.992546, 0, 4, 10 )
 
 [node name="KinematicBody_000" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5 )
 
 [node name="MeshInstance_Body" type="MeshInstance" parent="KinematicBody_000"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0236233, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -120,17 +119,17 @@ mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance_Arm_L1" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body"]
-transform = Transform( 1, 0, 0, 0, 0.986431, -0.164175, 0, 0.164175, 0.986431, 1, 0.1, -0.160638 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.1, 0 )
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance_Arm_L2" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body/MeshInstance_Arm_L1"]
-transform = Transform( 1, 0, 0, 0, 0.906075, 0.423118, 0, -0.423118, 0.906075, 0, -0.930468, 0.139064 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance_Arm_R1" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body"]
-transform = Transform( 1, 0, 0, 0, 0.986431, 0.164175, 0, -0.164175, 0.986431, -1, 0.1, 0.160638 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1, 0 )
 mesh = SubResource( 10 )
 material/0 = null
 
@@ -140,7 +139,7 @@ mesh = SubResource( 12 )
 material/0 = null
 
 [node name="MeshInstance_Leg_L1" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body"]
-transform = Transform( 1, 0, 0, 0, 0.986431, 0.164175, 0, -0.164175, 0.986431, 0.4, -1.5, 0.160638 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -1.5, 0 )
 mesh = SubResource( 14 )
 material/0 = null
 
@@ -150,12 +149,12 @@ mesh = SubResource( 16 )
 material/0 = null
 
 [node name="MeshInstance_Leg_R1" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body"]
-transform = Transform( 1, 0, 0, 0, 0.986431, -0.164175, 0, 0.164175, 0.986431, -0.4, -1.5, -0.160638 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -1.5, 0 )
 mesh = SubResource( 18 )
 material/0 = null
 
 [node name="MeshInstance_Leg_R2" type="MeshInstance" parent="KinematicBody_000/MeshInstance_Body/MeshInstance_Leg_R1"]
-transform = Transform( 1, 0, 0, 0, 0.906074, -0.423117, 0, 0.423117, 0.906074, 0, -0.860936, -0.139064 )
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, -1, 0 )
 mesh = SubResource( 20 )
 material/0 = null
 
@@ -169,7 +168,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
 shape = SubResource( 21 )
 
 [node name="Camera" type="Camera" parent="KinematicBody_000"]
-transform = Transform( 0.397612, -0.159332, 0.903614, 0, 0.984808, 0.173648, -0.917554, -0.0690446, 0.391572, 5, 0, 2 )
+transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 5, 0, 12 )
 visible = false
 
 [node name="Camera2" type="Camera" parent="KinematicBody_000"]
@@ -218,6 +217,7 @@ __meta__ = {
 }
 
 [node name="MeshInstance_Ground" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 23 )
 material/0 = null
 

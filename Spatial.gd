@@ -1,8 +1,10 @@
 extends Spatial
 
 
-const speed = 2
+const Run_speed = 5
+const Walk_speed = 2
 
+var speed = 2
 var mouse_sens = 0.3
 var Player_000
 var Player_001
@@ -14,6 +16,7 @@ var Player_quat_s = Quat(0, 1, 0, 0)
 var Player_quat_g = Quat(0, 1, 0, 0)
 var Player_quat_t = 0.2
 var Flag = 0
+var Walk_Flag = 0
 
 
 func _ready():
@@ -78,20 +81,26 @@ func player_move():
 		get_node("KinematicBody_001/AnimationPlayer").play("Look_Around_R")
 	if Input.is_key_pressed(KEY_N):
 		get_node("KinematicBody_001/AnimationPlayer").play("Nod")
+	if Input.is_key_pressed(KEY_M):
+		get_node("KinematicBody_001/AnimationPlayer").play("Shake_Head")
 	if Input.is_key_pressed(KEY_Q):
 		get_node("KinematicBody_001/AnimationPlayer").play("Question_L")
 	if Input.is_key_pressed(KEY_A):
 		get_node("KinematicBody_001/AnimationPlayer").play("Question_R")
 	if Input.is_key_pressed(KEY_T):
 		get_node("KinematicBody_001/AnimationPlayer").play("Run")
-	if Input.is_key_pressed(KEY_M):
-		get_node("KinematicBody_001/AnimationPlayer").play("Shake_Head")
+		Walk_Flag = 2
+		speed = Run_speed
 	if Input.is_key_pressed(KEY_S):
 		get_node("KinematicBody_001/AnimationPlayer").play("Stop")
 	if Input.is_key_pressed(KEY_W):
 		get_node("KinematicBody_001/AnimationPlayer").play("Walk")
+		Walk_Flag = 0
+		speed = Walk_speed
 	if Input.is_key_pressed(KEY_E):
 		get_node("KinematicBody_001/AnimationPlayer").play("Walk_1")
+		Walk_Flag = 1
+		speed = Walk_speed
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
 	if Input.is_action_pressed("ui_left"):
@@ -109,11 +118,13 @@ func player_move():
 #		Player.transform = Transform(Player_quat_s)								# Not work well
 		Player_001.rotation.y = atan2(direction.x, direction.z)
 		Player_001.move_and_slide(force, Vector3(1, 0, 1))
-		get_node("KinematicBody_001/AnimationPlayer").play("Walk")
+		if Walk_Flag == 2:
+			get_node("KinematicBody_001/AnimationPlayer").play("Run")
+		elif Walk_Flag == 1:
+			get_node("KinematicBody_001/AnimationPlayer").play("Walk_1")
+		else:
+			get_node("KinematicBody_001/AnimationPlayer").play("Walk")
 	elif Flag == 1:
 		get_node("KinematicBody_001/AnimationPlayer").play("Stop")
 		Flag = 0
-
-
-
 
