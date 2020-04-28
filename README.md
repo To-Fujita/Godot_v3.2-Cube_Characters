@@ -8,7 +8,7 @@ This Demo is confirmed by Microsoft Edge (Ver. 11.0.17763.379), Firefox (Ver. 65
 ## 3. Usage:
 ![Cube_Character_01](https://to-fujita.github.io/Images/Cube_Characters_01.png "Cube_Character")
 ### 3-1. Cubes
-It is needed 10 cubes for a chracter. That is a head, a body, 4 sets of arms and 4 sets of legs. The size for each cube is show above.  The caracter size is able to change by setting the scale. 
+It is needed 10 cubes for a chracter. That is a head, a body, 4 sets of arms and 4 sets of legs. The size for each cube is shown in above.  The caracter size is able to change by setting the scale. 
 ### 3-2. Textures
 A texture for an aspect is a square (n x n pixels). The texture image size for a cube is 3n x 2n. Please refer to the image above.  
 In this time, the textures are created based on the paper craft of CUBEECRAFT.
