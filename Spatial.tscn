@@ -1,14 +1,27 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://images/ABC.png" type="Texture" id=1]
 [ext_resource path="res://Spatial.gd" type="Script" id=2]
 [ext_resource path="res://Animations/Walk.tres" type="Animation" id=3]
 [ext_resource path="res://Animations/Stop.tres" type="Animation" id=4]
 [ext_resource path="res://Animations/Walk_1.tres" type="Animation" id=5]
+[ext_resource path="res://Animations/Question_L.tres" type="Animation" id=6]
+[ext_resource path="res://Animations/Fall_Down.tres" type="Animation" id=7]
+[ext_resource path="res://Animations/Nod.tres" type="Animation" id=8]
+[ext_resource path="res://Animations/Look_Around_R.tres" type="Animation" id=9]
+[ext_resource path="res://Animations/Jump.tres" type="Animation" id=10]
+[ext_resource path="res://Animations/Run.tres" type="Animation" id=11]
+[ext_resource path="res://Animations/Question_R.tres" type="Animation" id=12]
+[ext_resource path="res://Animations/Shake_Head.tres" type="Animation" id=13]
+[ext_resource path="res://Animations/Look_Around_L.tres" type="Animation" id=14]
+[ext_resource path="res://images/icon_24D.png" type="Texture" id=15]
 [ext_resource path="res://images/grass.jpg" type="Texture" id=16]
 [ext_resource path="res://JoyStick.gd" type="Script" id=17]
 [ext_resource path="res://images/orange_ball_01.png" type="Texture" id=18]
 [ext_resource path="res://images/big_circle_N.png" type="Texture" id=19]
+[ext_resource path="res://images/icon_24R.png" type="Texture" id=20]
+[ext_resource path="res://images/icon_24L.png" type="Texture" id=21]
+[ext_resource path="res://images/icon_24U.png" type="Texture" id=22]
 [ext_resource path="res://KinematicBody_003.tscn" type="PackedScene" id=24]
 [ext_resource path="res://KinematicBody_002.tscn" type="PackedScene" id=25]
 [ext_resource path="res://KinematicBody_001.tscn" type="PackedScene" id=26]
@@ -104,10 +117,10 @@ shadow_enabled = true
 [node name="Spatial_Ginbal" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="Spatial_Ginbal"]
-transform = Transform( 1, 0, 0, 0, 0.992546, 0.121869, 0, -0.121869, 0.992546, 0, 4, 10 )
+transform = Transform( 1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 4, 10 )
 
 [node name="KinematicBody_000" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
 
 [node name="MeshInstance_Body" type="MeshInstance" parent="KinematicBody_000"]
 mesh = SubResource( 2 )
@@ -159,6 +172,15 @@ mesh = SubResource( 20 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody_000"]
+anims/Fall_Down = ExtResource( 7 )
+anims/Jump = ExtResource( 10 )
+anims/Look_Around_L = ExtResource( 14 )
+anims/Look_Around_R = ExtResource( 9 )
+anims/Nod = ExtResource( 8 )
+anims/Question_L = ExtResource( 6 )
+anims/Question_R = ExtResource( 12 )
+anims/Run = ExtResource( 11 )
+anims/Shake_Head = ExtResource( 13 )
 anims/Stop = ExtResource( 4 )
 anims/Walk = ExtResource( 3 )
 anims/Walk_1 = ExtResource( 5 )
@@ -182,9 +204,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 0 )
 
 [node name="KinematicBody_001" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5 )
 
 [node name="JoyStick" type="Node2D" parent="."]
-position = Vector2( 200, 460 )
+position = Vector2( 400, 475 )
 script = ExtResource( 17 )
 
 [node name="BigCircle" type="Sprite" parent="JoyStick"]
@@ -193,33 +216,154 @@ texture = ExtResource( 19 )
 [node name="SmallCircle" type="Sprite" parent="JoyStick"]
 texture = ExtResource( 18 )
 
-[node name="Label" type="Label" parent="."]
-margin_right = 112.0
-margin_bottom = 203.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "
- L: Look Around L
- R: Look Around R
- N: Nod
- M: Shake Head
- Q: Question L
- A: Question R
- S: Stop
- W: Walk
- E: Walk_1
- T: Run
-  J:  Jump
- F: Fall Down
-<- -> : Move
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="MeshInstance_Ground" type="MeshInstance" parent="."]
 visible = false
 mesh = SubResource( 23 )
 material/0 = null
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 10, 10 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_L" type="Button" parent="Node2D/VBoxContainer"]
+margin_right = 154.0
+margin_bottom = 20.0
+text = "L: Look Around Left"
+align = 0
+
+[node name="Button_K" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 24.0
+margin_right = 154.0
+margin_bottom = 44.0
+text = "K: Look Around Right"
+align = 0
+
+[node name="Button_M" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 48.0
+margin_right = 154.0
+margin_bottom = 68.0
+text = "M: Shake Head"
+align = 0
+
+[node name="Button_N" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 72.0
+margin_right = 154.0
+margin_bottom = 92.0
+text = "N: Nod"
+align = 0
+
+[node name="Button_Q" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 96.0
+margin_right = 154.0
+margin_bottom = 116.0
+text = "Q: Question Left"
+align = 0
+
+[node name="Button_A" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 120.0
+margin_right = 154.0
+margin_bottom = 140.0
+text = "A: Question Right"
+align = 0
+
+[node name="Button_F" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 144.0
+margin_right = 154.0
+margin_bottom = 164.0
+text = "F: Fall Down"
+align = 0
+
+[node name="Button_W" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 168.0
+margin_right = 154.0
+margin_bottom = 188.0
+text = "W: Walk #1"
+align = 0
+
+[node name="Button_E" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 192.0
+margin_right = 154.0
+margin_bottom = 212.0
+text = "E: Walk #2"
+align = 0
+
+[node name="Button_R" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 216.0
+margin_right = 154.0
+margin_bottom = 236.0
+text = "R: Run"
+align = 0
+
+[node name="Button_J" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 240.0
+margin_right = 154.0
+margin_bottom = 260.0
+text = "J: Jump"
+align = 0
+
+[node name="Button_S" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 264.0
+margin_right = 154.0
+margin_bottom = 284.0
+text = "S: Stop"
+align = 0
+
+[node name="Button_0" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 288.0
+margin_right = 154.0
+margin_bottom = 308.0
+text = "0 - 9: Change Textures"
+align = 0
+
+[node name="Button_UP" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 312.0
+margin_right = 154.0
+margin_bottom = 342.0
+icon = ExtResource( 22 )
+
+[node name="Button_LEFT" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 346.0
+margin_right = 154.0
+margin_bottom = 376.0
+icon = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_RIGHT" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 380.0
+margin_right = 154.0
+margin_bottom = 410.0
+icon = ExtResource( 20 )
+
+[node name="Button_DOWN" type="Button" parent="Node2D/VBoxContainer"]
+margin_top = 414.0
+margin_right = 154.0
+margin_bottom = 444.0
+icon = ExtResource( 15 )
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_L" to="." method="_on_Button_L_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_K" to="." method="_on_Button_K_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_M" to="." method="_on_Button_M_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_N" to="." method="_on_Button_N_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_Q" to="." method="_on_Button_Q_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_A" to="." method="_on_Button_A_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_F" to="." method="_on_Button_F_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_W" to="." method="_on_Button_W_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_E" to="." method="_on_Button_E_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_R" to="." method="_on_Button_R_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_J" to="." method="_on_Button_J_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_S" to="." method="_on_Button_S_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_0" to="." method="_on_Button_0_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_UP" to="." method="_on_Button_UP_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_LEFT" to="." method="_on_Button_LEFT_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_RIGHT" to="." method="_on_Button_RIGHT_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button_DOWN" to="." method="_on_Button_DOWN_pressed"]
 
 [editable path="KinematicBody_003"]
 
