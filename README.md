@@ -6,7 +6,7 @@ It is very easy to change their textures and to add some new animations.
 [Cube Characters Animation Demo](https://to-fujita.github.io/Godot_v3.2-Cube_Characters/Cube_Characters_Demo.html)  
 This Demo is confirmed by Microsoft Edge (Ver. 11.0.17763.379), Firefox (Ver. 65.0.2/64 bit) and Google Chrome (Ver. 73.0.3683.86/64 bit) under the condition of Windows 10.
 ## 3. Usage:
-![Cube_Character_01](https://to-fujita.github.io/Images/Cube_Characters_01.png "Cube_Character Images")
+![Cube_Character_01](https://to-fujita.github.io/Images/Cube_Characters_01.png "Images for Cube_Characters")
 ### 3-1. Cubes
 It is needed 10 cubes for a chracter. That is a head, a body, 4 sets of arms and 4 sets of legs. The size for each cube is shown in above.  The caracter size is able to change by setting the scale. 
 ### 3-2. Textures
