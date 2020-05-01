@@ -77,7 +77,7 @@ func _process(_delta):
 
 
 func _on_JoystickMove(vector):
-	if Mouse_pos.x < 160:
+	if Mouse_pos.x < 320:
 		return
 	if vector.length() > 0:
 		var force = Vector3(vector.x, 0, vector.y).normalized() * speed

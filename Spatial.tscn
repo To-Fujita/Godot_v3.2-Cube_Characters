@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://images/ABC.png" type="Texture" id=1]
 [ext_resource path="res://Spatial.gd" type="Script" id=2]
@@ -14,14 +14,15 @@
 [ext_resource path="res://Animations/Question_R.tres" type="Animation" id=12]
 [ext_resource path="res://Animations/Shake_Head.tres" type="Animation" id=13]
 [ext_resource path="res://Animations/Look_Around_L.tres" type="Animation" id=14]
-[ext_resource path="res://images/icon_24D.png" type="Texture" id=15]
+[ext_resource path="res://images/icon_64U.png" type="Texture" id=15]
 [ext_resource path="res://images/grass.jpg" type="Texture" id=16]
 [ext_resource path="res://JoyStick.gd" type="Script" id=17]
 [ext_resource path="res://images/orange_ball_01.png" type="Texture" id=18]
 [ext_resource path="res://images/big_circle_N.png" type="Texture" id=19]
-[ext_resource path="res://images/icon_24R.png" type="Texture" id=20]
-[ext_resource path="res://images/icon_24L.png" type="Texture" id=21]
-[ext_resource path="res://images/icon_24U.png" type="Texture" id=22]
+[ext_resource path="res://images/icon_64D.png" type="Texture" id=20]
+[ext_resource path="res://images/icon_64L.png" type="Texture" id=21]
+[ext_resource path="res://images/icon_64R.png" type="Texture" id=22]
+[ext_resource path="res://font/Xolonium-Regular.ttf" type="DynamicFontData" id=23]
 [ext_resource path="res://KinematicBody_003.tscn" type="PackedScene" id=24]
 [ext_resource path="res://KinematicBody_002.tscn" type="PackedScene" id=25]
 [ext_resource path="res://KinematicBody_001.tscn" type="PackedScene" id=26]
@@ -106,6 +107,58 @@ uv1_scale = Vector3( 100, 100, 0 )
 [sub_resource type="PlaneMesh" id=23]
 material = SubResource( 22 )
 size = Vector2( 100, 100 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=27]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=30]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=31]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 24
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 24
+font_data = ExtResource( 23 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 2 )
@@ -207,7 +260,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5 )
 
 [node name="JoyStick" type="Node2D" parent="."]
-position = Vector2( 400, 475 )
+position = Vector2( 500, 450 )
 script = ExtResource( 17 )
 
 [node name="BigCircle" type="Sprite" parent="JoyStick"]
@@ -232,121 +285,138 @@ __meta__ = {
 }
 
 [node name="Button_L" type="Button" parent="Node2D/VBoxContainer"]
-margin_right = 154.0
-margin_bottom = 20.0
+margin_right = 316.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 24 )
 text = "L: Look Around Left"
 align = 0
 
 [node name="Button_K" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 24.0
-margin_right = 154.0
-margin_bottom = 44.0
+margin_top = 40.0
+margin_right = 316.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 25 )
 text = "K: Look Around Right"
 align = 0
 
 [node name="Button_M" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 48.0
-margin_right = 154.0
-margin_bottom = 68.0
+margin_top = 80.0
+margin_right = 316.0
+margin_bottom = 116.0
+custom_fonts/font = SubResource( 26 )
 text = "M: Shake Head"
 align = 0
 
 [node name="Button_N" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 72.0
-margin_right = 154.0
-margin_bottom = 92.0
+margin_top = 120.0
+margin_right = 316.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 27 )
 text = "N: Nod"
 align = 0
 
 [node name="Button_Q" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 96.0
-margin_right = 154.0
-margin_bottom = 116.0
+margin_top = 160.0
+margin_right = 316.0
+margin_bottom = 196.0
+custom_fonts/font = SubResource( 28 )
 text = "Q: Question Left"
 align = 0
 
 [node name="Button_A" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 120.0
-margin_right = 154.0
-margin_bottom = 140.0
+margin_top = 200.0
+margin_right = 316.0
+margin_bottom = 236.0
+custom_fonts/font = SubResource( 29 )
 text = "A: Question Right"
 align = 0
 
 [node name="Button_F" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 144.0
-margin_right = 154.0
-margin_bottom = 164.0
+margin_top = 240.0
+margin_right = 316.0
+margin_bottom = 276.0
+custom_fonts/font = SubResource( 30 )
 text = "F: Fall Down"
 align = 0
 
 [node name="Button_W" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 168.0
-margin_right = 154.0
-margin_bottom = 188.0
+margin_top = 280.0
+margin_right = 316.0
+margin_bottom = 316.0
+custom_fonts/font = SubResource( 31 )
 text = "W: Walk #1"
 align = 0
 
 [node name="Button_E" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 192.0
-margin_right = 154.0
-margin_bottom = 212.0
+margin_top = 320.0
+margin_right = 316.0
+margin_bottom = 356.0
+custom_fonts/font = SubResource( 32 )
 text = "E: Walk #2"
 align = 0
 
 [node name="Button_R" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 216.0
-margin_right = 154.0
-margin_bottom = 236.0
+margin_top = 360.0
+margin_right = 316.0
+margin_bottom = 396.0
+custom_fonts/font = SubResource( 33 )
 text = "R: Run"
 align = 0
 
 [node name="Button_J" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 240.0
-margin_right = 154.0
-margin_bottom = 260.0
+margin_top = 400.0
+margin_right = 316.0
+margin_bottom = 436.0
+custom_fonts/font = SubResource( 34 )
 text = "J: Jump"
 align = 0
 
 [node name="Button_S" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 264.0
-margin_right = 154.0
-margin_bottom = 284.0
+margin_top = 440.0
+margin_right = 316.0
+margin_bottom = 476.0
+custom_fonts/font = SubResource( 35 )
 text = "S: Stop"
 align = 0
 
 [node name="Button_0" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 288.0
-margin_right = 154.0
-margin_bottom = 308.0
+margin_top = 480.0
+margin_right = 316.0
+margin_bottom = 516.0
+custom_fonts/font = SubResource( 36 )
 text = "0 - 9: Change Textures"
 align = 0
 
-[node name="Button_UP" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 312.0
-margin_right = 154.0
-margin_bottom = 342.0
-icon = ExtResource( 22 )
+[node name="HBoxContainer" type="HBoxContainer" parent="Node2D/VBoxContainer"]
+margin_top = 520.0
+margin_right = 316.0
+margin_bottom = 590.0
 
-[node name="Button_LEFT" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 346.0
-margin_right = 154.0
-margin_bottom = 376.0
+[node name="Button_UP" type="Button" parent="Node2D/VBoxContainer/HBoxContainer"]
+margin_right = 76.0
+margin_bottom = 70.0
+icon = ExtResource( 15 )
+
+[node name="Button_LEFT" type="Button" parent="Node2D/VBoxContainer/HBoxContainer"]
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 70.0
 icon = ExtResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button_RIGHT" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 380.0
-margin_right = 154.0
-margin_bottom = 410.0
-icon = ExtResource( 20 )
+[node name="Button_RIGHT" type="Button" parent="Node2D/VBoxContainer/HBoxContainer"]
+margin_left = 160.0
+margin_right = 236.0
+margin_bottom = 70.0
+icon = ExtResource( 22 )
 
-[node name="Button_DOWN" type="Button" parent="Node2D/VBoxContainer"]
-margin_top = 414.0
-margin_right = 154.0
-margin_bottom = 444.0
-icon = ExtResource( 15 )
+[node name="Button_DOWN" type="Button" parent="Node2D/VBoxContainer/HBoxContainer"]
+margin_left = 240.0
+margin_right = 316.0
+margin_bottom = 70.0
+icon = ExtResource( 20 )
 [connection signal="pressed" from="Node2D/VBoxContainer/Button_L" to="." method="_on_Button_L_pressed"]
 [connection signal="pressed" from="Node2D/VBoxContainer/Button_K" to="." method="_on_Button_K_pressed"]
 [connection signal="pressed" from="Node2D/VBoxContainer/Button_M" to="." method="_on_Button_M_pressed"]
@@ -360,10 +430,10 @@ icon = ExtResource( 15 )
 [connection signal="pressed" from="Node2D/VBoxContainer/Button_J" to="." method="_on_Button_J_pressed"]
 [connection signal="pressed" from="Node2D/VBoxContainer/Button_S" to="." method="_on_Button_S_pressed"]
 [connection signal="pressed" from="Node2D/VBoxContainer/Button_0" to="." method="_on_Button_0_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/Button_UP" to="." method="_on_Button_UP_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/Button_LEFT" to="." method="_on_Button_LEFT_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/Button_RIGHT" to="." method="_on_Button_RIGHT_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/Button_DOWN" to="." method="_on_Button_DOWN_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/HBoxContainer/Button_UP" to="." method="_on_Button_UP_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/HBoxContainer/Button_LEFT" to="." method="_on_Button_LEFT_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/HBoxContainer/Button_RIGHT" to="." method="_on_Button_RIGHT_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/HBoxContainer/Button_DOWN" to="." method="_on_Button_DOWN_pressed"]
 
 [editable path="KinematicBody_003"]
 
