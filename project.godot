@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="GitHub Cube Characters"
 run/main_scene="res://Spatial.tscn"
-config/icon="res://images/Cube_A_001/Cube_A_001.png"
+config/icon="res://images/Cube_A.png"
 
 [rendering]
 
