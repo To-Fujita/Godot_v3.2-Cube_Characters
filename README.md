@@ -16,7 +16,7 @@ I have created several simple animations as a demo. The animation is able to cre
 ## 4. Reference:
 [Godot Engine](https://godotengine.org/): Free and open source 2D and 3D game engine  
 [Godot-Virtual-Joystick](https://github.com/rodrigofbm/Godot-Virtual-Joystick): Virtual Joystick with Godot Engine 3.x   
-[Sokoban Cube](https://github.com/To-Fujita/Godot_v3.2-Cube_Characters): Sokoban type of game that is a demo for Cube Characters. 
+[Sokoban Cube](https://github.com/To-Fujita/Godot_v3.2-Sokoban_Cube): Sokoban type of game that is a demo for Cube Characters. 
 ## 5. Licence:
 MIT
 ## 6. Author:
